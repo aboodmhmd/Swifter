@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./components/sidebar/Sidebar.jsx";
+import Topbar from "./components/topbar/Topbar.jsx";
+import { BrowserRouter as Router } from "react-router-dom";
+import Dashboard from "./dashboard.js";
+import HomePage from "./home.js";
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <HomePage />
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <Dashboard />
+      </div>
+    </Router>
   );
 }
 
